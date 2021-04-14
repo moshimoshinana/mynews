@@ -39,14 +39,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $news)
+                            @foreach($posts as $Profiles)
                                 <tr>
                                     <th>{{ $Profiles->id }}</th>
+                                    <td>{{ \Str::limit($Profiles->name, 100) }}</td>
+                                    <td>{{ \Str::limit($Profiles->gender, 100) }}</td>
                                     <td>{{ \Str::limit($Profiles->hobby, 100) }}</td>
                                     <td>{{ \Str::limit($Profiles->introduction, 250) }}</td>
                                     <td>
                                         <div>
-                                            <a href="{{ action('Admin\ProfileController@edit', ['id' => $news->id]) }}">編集</a>
+                                            <a href="{{ action('Admin\ProfileController@edit', ['id' => $Profiles->id]) }}">編集</a>
                                         </div>
                                     </td>
                                 </tr>

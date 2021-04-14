@@ -26,7 +26,6 @@
                             <input type="text" class="form-control" name="title" value="{{ $profile_form->gender }}">
                         </div>
                     </div>
-                    </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="body">趣味</label>
                         <div class="col-md-10">
@@ -47,6 +46,18 @@
                         </div>
                     </div>
                 </form>
+                <div class="row mt-5">
+                    <div class="col-md-4 mx-auto">
+                        <h2>更新履歴</h2>
+                        <ul class="list-group">
+                            @if ($profile_form->profilehistories != NULL)
+                                @foreach ($profile_form->profilehistories as $profilehistory)
+                                    <li class="list-group-item">{{ $profilehistory->edited_at }}</li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
